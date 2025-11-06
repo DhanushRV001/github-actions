@@ -1,0 +1,12 @@
+name: Test Self Hosted Runner
+
+on: [push]
+
+jobs:
+  self-hosted-job:
+    runs-on: self-hosted
+    steps:
+      - name: Print system info
+        run: |
+          echo "Running on self-hosted runner!"
+          uname -a
