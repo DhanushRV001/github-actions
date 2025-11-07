@@ -4,6 +4,10 @@ inputs:
   name:
     description: "The name of the person to greet"
     required: true
+  organisation:
+    description: "The organisation he works"
+    required: false
+    default: "Blue-Ocean"
 
 runs:
   using: "composite"
