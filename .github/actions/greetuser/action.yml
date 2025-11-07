@@ -1,15 +1,19 @@
 name: "Greet User"
 description: "A custom composite action to greet the user"
+
 inputs:
   name:
     description: "The name of the person to greet"
     required: true
   organisation:
-    description: "The organisation he works"
+    description: "The organisation he works for"
     required: true
 
 runs:
   using: "composite"
   steps:
-    - run: ./.github/actions/greetuser/greet.sh
+    - name: Run greeting script
+      run: |
+        chmod +x .github/actions/greetuser/greet.sh
+        ./.github/actions/greetuser/greet.sh "${{ inputs.name }}" "${{ inputs.organisation }}"
       shell: bash
