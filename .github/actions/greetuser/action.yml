@@ -1,0 +1,12 @@
+name: "Greet User"
+description: "A custom composite action to greet the user"
+inputs:
+  name:
+    description: "The name of the person to greet"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: ./.github/actions/greetuser/greet.sh
+      shell: bash
