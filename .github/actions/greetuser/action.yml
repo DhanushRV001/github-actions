@@ -6,8 +6,7 @@ inputs:
     required: true
   organisation:
     description: "The organisation he works"
-    required: false
-    default: "Blue-Ocean"
+    required: true
 
 runs:
   using: "composite"

@@ -13,3 +13,4 @@ jobs:
         uses: ./.github/actions/greetuser
         with:
           name: Dhanush
+          organisation: "Blue-ocean"
