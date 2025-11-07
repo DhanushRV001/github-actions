@@ -1,15 +1,17 @@
-name: Test Self Hosted Runner
+name: Self Hosted Runner
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["ENV & SECRETS"]
+    types:
+      - completed
 
 jobs:
   self-hosted-job:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}  
     runs-on: self-hosted
     steps:
       - name: Print system info
         run: |
-          echo "Running on self-hosted runner!"
+          echo "Running on self-hosted runner! after the env file"
           uname -a
