@@ -12,5 +12,5 @@ jobs:
       - name: Run custom greet action
         uses: ./.github/actions/greetuser
         with:
-          name: Dhanush R V
+          name: Dhanush
           organisation: "Blue-ocean"
