@@ -12,7 +12,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Run greeting script
+    - name: Run greeting scripts
       run: |
         chmod +x .github/actions/greetuser/greet.sh
         ./.github/actions/greetuser/greet.sh "${{ inputs.name }}" "${{ inputs.organisation }}"
